@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Mewtronix Technologies - Pioneering Alien-Core Innovations in AI, Quantum Computing, Robotics, and Advanced Sciences">
-<title>Mewtronix Technologies </title>
+<title>Mewtronix Technologies</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -23,8 +23,10 @@
     --primary-cyan: #00ffff;
     --primary-red: #ff0030;
     --accent-purple: #9d00ff;
+    --accent-gold: #ffd700;
     --dark-bg: #0a0a1a;
     --card-bg: rgba(10, 15, 30, 0.7);
+    --premium-bg: rgba(30, 15, 40, 0.8);
     --text-glow: 0 0 10px;
 }
 
@@ -38,9 +40,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #e6f7ff;
     background: 
-        /* Dark overlay for better text readability */
         linear-gradient(rgba(10, 10, 26, 0.85), rgba(10, 10, 26, 0.9)),
-        /* Your background image */
         url("futuristic-background.webp") center/cover no-repeat fixed;
     overflow-x: hidden;
     min-height: 100vh;
@@ -193,6 +193,53 @@ body {
     font-size: 1.2rem;
 }
 
+/* Video Ad Section */
+.video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 0, 48, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.video-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    color: var(--primary-cyan);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.video-player {
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.video-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-description {
+    margin-top: 20px;
+    color: #b8d4ff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 /* Projects Section */
 .projects-section {
     padding: 60px 0 80px;
@@ -304,6 +351,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-top: auto;
 }
 
 .purchase-btn:hover {
@@ -311,6 +359,110 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 0, 48, 0.4);
     color: white;
+}
+
+/* Source Code Bundle Section */
+.source-code-bundle {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.bundle-card {
+    background: var(--premium-bg);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 50px rgba(255, 215, 0, 0.2),
+        0 0 100px rgba(0, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bundle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--primary-cyan), var(--primary-red));
+}
+
+.bundle-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.bundle-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-cyan);
+    margin-bottom: 30px;
+}
+
+.bundle-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bundle-features li {
+    padding: 12px 0;
+    color: #b8d4ff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bundle-features li i {
+    color: var(--accent-gold);
+}
+
+.bundle-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: var(--accent-gold);
+    margin: 30px 0;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.bundle-price span {
+    font-size: 1.2rem;
+    color: var(--primary-cyan);
+}
+
+.bundle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    background: linear-gradient(90deg, var(--accent-gold), #ffed4e);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 25px rgba(255, 215, 0, 0.4);
+    border: none;
+}
+
+.bundle-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(90deg, #ffed4e, var(--accent-gold));
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+    color: #000;
 }
 
 /* Footer */
@@ -342,7 +494,27 @@ body {
     font-weight: 300;
 }
 
+/* Badge for Premium */
+.premium-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, var(--accent-gold), #ff9500);
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.3);
+}
+
 /* Responsive Design */
+@media (max-width: 992px) {
+    .video-player {
+        height: 400px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.8rem;
@@ -373,9 +545,24 @@ body {
         font-size: 2rem;
     }
     
-    /* Optimize background for mobile */
+    .video-player {
+        height: 300px;
+    }
+    
+    .video-title {
+        font-size: 1.8rem;
+    }
+    
+    .bundle-title {
+        font-size: 2.2rem;
+    }
+    
+    .bundle-price {
+        font-size: 2.8rem;
+    }
+    
     body {
-        background-attachment: scroll; /* Change from fixed to scroll for better mobile performance */
+        background-attachment: scroll;
     }
 }
 
@@ -395,6 +582,23 @@ body {
     
     .card-image {
         height: 180px;
+    }
+    
+    .video-player {
+        height: 200px;
+    }
+    
+    .bundle-card {
+        padding: 25px 20px;
+    }
+    
+    .bundle-title {
+        font-size: 1.8rem;
+    }
+    
+    .bundle-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
     }
 }
 
@@ -417,54 +621,25 @@ body {
     animation: pulse-glow 4s ease-in-out infinite;
 }
 
-/* Background image optimization classes */
-.bg-optimized {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@keyframes shine {
+    0% { background-position: -100px; }
+    100% { background-position: 200px; }
 }
 
-.bg-fallback {
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
-}
-
-/* Loading state for background */
-.bg-loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease;
-}
-
-.loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(0, 255, 255, 0.3);
-    border-top: 3px solid var(--primary-cyan);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.shine-effect {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 200px 100%;
+    animation: shine 3s infinite;
 }
 </style>
 </head>
 
 <body>
-<!-- Loading screen (optional) -->
-<!-- <div class="bg-loading" id="loadingScreen">
-    <div class="loading-spinner"></div>
-</div> -->
-
 <div class="gradient-overlay pulse-glow"></div>
 <div class="grid-pattern"></div>
 
@@ -488,27 +663,63 @@ body {
         </div>
     </header>
 
+    <!-- Video Ad Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <h2 class="video-title">StormCipher Chatbot</h2>
+            <div class="video-player">
+                <video>
+                    <source src="storm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-description">
+                Experience the power of StormCipher - The ultimate secure EXE conversion system with quantum-resistant encryption. 
+                Watch how it revolutionizes encrypted operations with lightning speed and military-grade security.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section class="projects-section">
         <h2 class="section-title">Innovation Portfolio</h2>
         
         <div class="projects-grid">
+            <!-- StormCipher Card -->
             <div class="project-card">
+                <div class="premium-badge">TOP SELLER</div>
                 <img src="Screenshot1.png" alt="StormCipher Interface" class="card-image">
                 <div class="card-content">
                     <h2>StormCipher</h2>
                     <p>Advanced secure EXE conversion system with quantum-resistant encryption for ultra-fast encrypted operations and data protection.</p>
+                    <a href="https://megaron.gumroad.com/l/fafiuf" 
+                       class="purchase-btn" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase  $80
+                    </a>
                 </div>
             </div>
 
+            <!-- QUNO Card -->
             <div class="project-card">
+                <div class="premium-badge">QUANTUM EDITION</div>
                 <img src="Screenshot2.png" alt="QUNO Quantum Interface" class="card-image">
                 <div class="card-content">
                     <h2>QUNO – Quantum Nano Oracle</h2>
                     <p>Predictive quantum nano-analysis system providing futuristic insights with unprecedented computational accuracy.</p>
+                    <a href="https://megaron.gumroad.com/l/evugft" 
+                       class="purchase-btn" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase  $50
+                    </a>
                 </div>
             </div>
 
+            <!-- Chemistry Wizard Card -->
             <div class="project-card">
+                <div class="premium-badge">CHEMISTRY PRO</div>
                 <img src="Screenshot3.png" alt="Chemistry Wizard Interface" class="card-image">
                 <div class="card-content">
                     <h2>Chemistry Wizard</h2>
@@ -517,12 +728,14 @@ body {
                        class="purchase-btn" 
                        target="_blank">
                         <i class="fas fa-shopping-cart"></i>
-                        Purchase 
+                        Purchase  $30
                     </a>
                 </div>
             </div>
 
+            <!-- EXO AI Card -->
             <div class="project-card">
+                <div class="premium-badge">SPACE EDITION</div>
                 <img src="Screenshot4.png" alt="EXO AI Interface" class="card-image">
                 <div class="card-content">
                     <h2>EXO AI</h2>
@@ -531,12 +744,14 @@ body {
                        class="purchase-btn" 
                        target="_blank">
                         <i class="fas fa-shopping-cart"></i>
-                        Purchase 
+                        Purchase  $20
                     </a>
                 </div>
             </div>
 
+            <!-- Robotic Organisms Card -->
             <div class="project-card">
+                <div class="premium-badge">3D BUNDLE</div>
                 <img src="Screenshot5.png" alt="Robotic Organisms 3D Models" class="card-image">
                 <div class="card-content">
                     <h2>Robotic Organism 3D Models</h2>
@@ -545,17 +760,50 @@ body {
                        class="purchase-btn" 
                        target="_blank">
                         <i class="fas fa-shopping-cart"></i>
-                        Purchase 
+                        Purchase Collection - $100
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Source Code Bundle Section -->
+    <section class="source-code-bundle">
+        <div class="bundle-card">
+            <div class="premium-badge">LIMITED OFFER</div>
+            <h2 class="bundle-title">Ultimate Source Code Bundle</h2>
+            <p class="bundle-subtitle">Complete Ownership & Full Modification Rights</p>
+            
+            <ul class="bundle-features">
+                <li><i class="fas fa-check-circle"></i> StormCipher - Full Source Code</li>
+                <li><i class="fas fa-check-circle"></i> QUNO - Complete Quantum System Code</li>
+                <li><i class="fas fa-check-circle"></i> Chemistry Wizard - Entire Codebase</li>
+                <li><i class="fas fa-check-circle"></i> Full Modification & Distribution Rights</li>
+                <li><i class="fas fa-check-circle"></i> Unlimited Installation Rights</li>
+            </ul>
+            
+            <div class="bundle-price">
+                $299.99 <span>ONE-TIME PAYMENT</span>
+            </div>
+            
+            <a href="https://megaron.gumroad.com/l/ugmlmz" 
+               class="bundle-btn" 
+               target="_blank">
+                <i class="fas fa-gem"></i>
+                GET FULL SOURCE CODE BUNDLE
+            </a>
+            
+            <p style="margin-top: 20px; color: #88aaff; font-size: 0.9rem;">
+                <i class="fas fa-shield-alt"></i> 
+                Secure Payment • Instant Delivery 
+            </p>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-content">
             <p class="copyright">© 2025 Mewtronix Technologies. All Rights Reserved.</p>
-            <p class="designer-credit">Designed by Ahammed Yaseen A. | Alien-Core Innovation Division</p>
+            <p class="designer-credit">Designed by Ahammed Yaseen A. </p>
         </div>
     </footer>
 </div>
@@ -563,15 +811,141 @@ body {
 <script>
 // Add subtle interactive effects
 document.addEventListener('DOMContentLoaded', function() {
-    // Remove loading screen (if used)
-    const loadingScreen = document.getElementById('loadingScreen');
-    if (loadingScreen) {
-        setTimeout(() => {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }, 1000);
+    // Updated video controls - Removed autoplay on hover
+    const video = document.querySelector('video');
+    if (video) {
+        // Play/pause on click functionality
+        video.addEventListener('click', function() {
+            if (this.paused) {
+                this.play().catch(e => {
+                    console.log('Video play failed:', e);
+                    // Show play button overlay if needed
+                    const playOverlay = document.createElement('div');
+                    playOverlay.innerHTML = '<i class="fas fa-play-circle"></i>';
+                    playOverlay.style.position = 'absolute';
+                    playOverlay.style.top = '50%';
+                    playOverlay.style.left = '50%';
+                    playOverlay.style.transform = 'translate(-50%, -50%)';
+                    playOverlay.style.fontSize = '60px';
+                    playOverlay.style.color = 'rgba(0, 255, 255, 0.8)';
+                    playOverlay.style.cursor = 'pointer';
+                    playOverlay.style.zIndex = '10';
+                    playOverlay.style.textShadow = '0 0 20px rgba(0, 255, 255, 0.5)';
+                    
+                    const videoContainer = this.parentElement;
+                    videoContainer.style.position = 'relative';
+                    videoContainer.appendChild(playOverlay);
+                    
+                    playOverlay.addEventListener('click', function() {
+                        video.play().then(() => {
+                            playOverlay.remove();
+                        }).catch(e => {
+                            console.log('Still cannot play:', e);
+                        });
+                    });
+                });
+            } else {
+                this.pause();
+            }
+        });
+        
+        // Optional: Add keyboard controls (Space for play/pause)
+        video.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (this.paused) {
+                    this.play();
+                } else {
+                    this.pause();
+                }
+            }
+        });
+        
+        // Make video focusable for keyboard navigation
+        video.setAttribute('tabindex', '0');
+        
+        // Add custom play button overlay initially
+        const videoContainer = video.parentElement;
+        videoContainer.style.position = 'relative';
+        
+        const playOverlay = document.createElement('div');
+        playOverlay.className = 'custom-play-overlay';
+        playOverlay.innerHTML = `
+            <div style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.7);
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border: 3px solid rgba(0, 255, 255, 0.8);
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+                transition: all 0.3s ease;
+                z-index: 5;
+            ">
+                <i class="fas fa-play" style="
+                    font-size: 40px;
+                    color: rgba(0, 255, 255, 0.9);
+                    margin-left: 5px;
+                "></i>
+            </div>
+        `;
+        
+        videoContainer.appendChild(playOverlay);
+        
+        // Remove overlay when video starts playing
+        video.addEventListener('play', function() {
+            const overlay = videoContainer.querySelector('.custom-play-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // Show overlay when video pauses
+        video.addEventListener('pause', function() {
+            const overlay = videoContainer.querySelector('.custom-play-overlay');
+            if (overlay) {
+                overlay.style.display = 'block';
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                }, 10);
+            }
+        });
+        
+        // Custom play button click handler
+        playOverlay.addEventListener('click', function(e) {
+            e.stopPropagation();
+            video.play().then(() => {
+                // Overlay will be hidden by the 'play' event listener
+            }).catch(e => {
+                console.log('Video play failed:', e);
+                // Show error message
+                const errorMsg = document.createElement('div');
+                errorMsg.innerHTML = '<p style="color: #ff0030; font-weight: bold;">Click here to play video</p>';
+                errorMsg.style.position = 'absolute';
+                errorMsg.style.top = '50%';
+                errorMsg.style.left = '50%';
+                errorMsg.style.transform = 'translate(-50%, -50%)';
+                errorMsg.style.zIndex = '10';
+                errorMsg.style.cursor = 'pointer';
+                videoContainer.appendChild(errorMsg);
+                
+                errorMsg.addEventListener('click', function() {
+                    video.play().then(() => {
+                        errorMsg.remove();
+                    });
+                });
+            });
+        });
     }
     
     // Add hover effect to project cards
@@ -610,6 +984,18 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.add('bg-fallback');
         body.style.backgroundImage = 'none';
     };
+    
+    // Bundle card shine effect
+    const bundleCard = document.querySelector('.bundle-card');
+    if (bundleCard) {
+        bundleCard.addEventListener('mouseenter', function() {
+            this.classList.add('shine-effect');
+        });
+        
+        bundleCard.addEventListener('mouseleave', function() {
+            this.classList.remove('shine-effect');
+        });
+    }
 });
 </script>
 </body>
