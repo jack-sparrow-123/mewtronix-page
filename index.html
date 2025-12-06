@@ -3,208 +3,614 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mewtronix Technologies – Alien-Core Futuristic Showcase</title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="description" content="Mewtronix Technologies - Pioneering Alien-Core Innovations in AI, Quantum Computing, Robotics, and Advanced Sciences">
+<title>Mewtronix Technologies </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a0a1a">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* Body + Background */
-body {
-    margin:0;
-    padding:0;
-    font-family:'Montserrat',sans-serif;
-    color:#e6f7ff;
-    background: url("futuristic-background.webp") center/cover no-repeat fixed;
-    overflow-x:hidden;
+:root {
+    --primary-cyan: #00ffff;
+    --primary-red: #ff0030;
+    --accent-purple: #9d00ff;
+    --dark-bg: #0a0a1a;
+    --card-bg: rgba(10, 15, 30, 0.7);
+    --text-glow: 0 0 10px;
 }
 
-/* Energy overlay (subtle red/cyan particles) */
-.energy-overlay {
-    position:fixed;
-    top:0; left:0; width:100%; height:100%;
-    background: radial-gradient(circle at 10% 20%, rgba(0,255,255,0.05) 0%, transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(255,0,30,0.05) 0%, transparent 50%);
-    pointer-events:none;
-    z-index:1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #e6f7ff;
+    background: 
+        /* Dark overlay for better text readability */
+        linear-gradient(rgba(10, 10, 26, 0.85), rgba(10, 10, 26, 0.9)),
+        /* Your background image */
+        url("futuristic-background.webp") center/cover no-repeat fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated gradient overlay */
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 48, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(157, 0, 255, 0.05) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+/* Grid pattern */
+.grid-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Main container */
+.container-main {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Header */
-header {
-    text-align:center;
-    padding:60px 20px;
-    position:relative;
-    z-index:2;
+.hero-section {
+    text-align: center;
+    padding: 80px 20px 60px;
+    position: relative;
 }
-header img {
-    width:140px;
-    border-radius:16px;
-    box-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 40px rgba(255,0,30,0.6);
+
+.logo-container {
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
 }
-header h1 {
-    font-family:'Orbitron',sans-serif;
-    font-size:3.5rem;
-    color:#00ffff;
-    text-shadow: 0 0 20px #00ffff, 0 0 40px #ff0030;
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-red));
+    border-radius: 2px;
 }
-header p {
-    color:#ff4d6d;
-    font-size:1.2rem;
-    text-shadow: 0 0 6px #ff0030;
+
+.hero-section img {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.5),
+        0 0 60px rgba(255, 0, 48, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.hero-section img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.hero-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-red));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px 0 15px;
+    letter-spacing: 1px;
+    text-shadow: var(--text-glow) rgba(0, 255, 255, 0.3);
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #a0e7ff;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    font-weight: 300;
 }
 
 /* Social Buttons */
-.social {
-    margin-top:20px;
-}
-.social a {
-    margin:0 15px;
-    padding:12px 25px;
-    background: linear-gradient(90deg,#00ffff,#ff0030);
-    color:#010114;
-    font-weight:700;
-    border-radius:50px;
-    text-decoration:none;
-    transition:0.3s;
-    box-shadow:0 0 10px #00ffff, 0 0 20px #ff0030;
-}
-.social a:hover {
-    transform: scale(1.1);
-    box-shadow:0 0 20px #00ffff, 0 0 40px #ff0030;
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
-/* Projects Grid */
-.projects {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap:30px;
-    padding:50px;
-    position:relative;
-    z-index:2;
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: linear-gradient(90deg, 
+        rgba(0, 255, 255, 0.1), 
+        rgba(255, 0, 48, 0.1));
+    color: var(--primary-cyan);
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, 
+        rgba(0, 255, 255, 0.2), 
+        rgba(255, 0, 48, 0.2));
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(0, 255, 255, 0.4);
+    color: white;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 0 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-cyan);
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--primary-cyan), 
+        transparent);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 0 20px;
 }
 
 /* Project Cards */
-.card {
-    background: rgba(0,0,0,0.2);
-    border-radius:20px;
-    border:1px solid rgba(255,0,30,0.4);
-    padding:20px;
-    backdrop-filter: blur(10px);
-    box-shadow:0 0 20px rgba(255,0,30,0.3),0 0 40px rgba(0,255,255,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+.project-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 0, 48, 0.2);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow:0 0 40px #ff0030, 0 0 60px #00ffff;
+
+.project-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 255, 255, 0.4);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.2),
+        0 0 60px rgba(255, 0, 48, 0.1);
 }
-.card img {
-    width:100%;
-    border-radius:15px;
-    margin-bottom:15px;
-    border:1px solid rgba(255,0,30,0.2);
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 0, 48, 0.2);
+    transition: transform 0.5s ease;
 }
-.card h2 {
-    font-family:'Orbitron',sans-serif;
-    color:#00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff0030;
-    margin-bottom:8px;
+
+.project-card:hover .card-image {
+    transform: scale(1.05);
 }
-.card p {
-    color:#ff4d6d;
-    line-height:1.5;
-    text-shadow:0 0 4px #ff0030;
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: var(--primary-cyan);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.card-content p {
+    color: #b8d4ff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-weight: 300;
+}
+
+/* Purchase Button */
+.purchase-btn {
+    align-self: flex-start;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, var(--primary-red), #ff3366);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 48, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.purchase-btn:hover {
+    background: linear-gradient(90deg, #ff3366, var(--primary-red));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 48, 0.4);
+    color: white;
 }
 
 /* Footer */
-footer {
-    text-align:center;
-    padding:40px;
-    color:#ff4d6d;
-    background: rgba(0,0,0,0.3);
-    border-top:1px solid rgba(255,0,30,0.4);
-    text-shadow:0 0 6px #ff0030;
-    position:relative;
-    z-index:2;
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #a0e7ff;
+    background: rgba(5, 10, 25, 0.8);
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
 }
 
-/* Small Animations */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
-.card img {
-    animation: float 4s ease-in-out infinite;
+
+.copyright {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--primary-cyan);
+}
+
+.designer-credit {
+    font-size: 0.9rem;
+    color: #88aaff;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .social-btn {
+        width: 250px;
+        justify-content: center;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Optimize background for mobile */
+    body {
+        background-attachment: scroll; /* Change from fixed to scroll for better mobile performance */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 50px 15px 40px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-section img {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+.pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Background image optimization classes */
+.bg-optimized {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-fallback {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+}
+
+/* Loading state for background */
+.bg-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 255, 255, 0.3);
+    border-top: 3px solid var(--primary-cyan);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 </style>
 </head>
 
 <body>
-<div class="energy-overlay"></div>
+<!-- Loading screen (optional) -->
+<!-- <div class="bg-loading" id="loadingScreen">
+    <div class="loading-spinner"></div>
+</div> -->
 
-<header>
-    <img src="mewtronix-tech.png" alt="Mewtronix Logo">
-    <h1>Mewtronix Technologies</h1>
-    <p>Alien-Core Futuristic Innovations – AI • Quantum • Robotics • Chemistry • Astronomy</p>
-    <div class="social">
-        <a href="https://www.youtube.com/@mewtronix890">YouTube</a>
-        <a href="https://www.instagram.com/mewtronix861/">Instagram</a>
-    </div>
-</header>
+<div class="gradient-overlay pulse-glow"></div>
+<div class="grid-pattern"></div>
 
-<section class="projects">
-    <div class="card">
-        <img src="Screenshot1.png" alt="StormCipher">
-        <h2>StormCipher</h2>
-        <p>Secure and ultra-fast EXE conversion bot for encrypted operations.</p>
-    </div>
+<div class="container-main">
+    <header class="hero-section">
+        <div class="logo-container">
+            <img src="mewtronix-tech.png" alt="Mewtronix Technologies Logo" class="floating">
+        </div>
+        <h1>Mewtronix Technologies</h1>
+        <p class="tagline">Pioneering  Innovations at the Convergence of AI, Quantum Computing, Robotics, and Advanced Sciences</p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/@mewtronix890" class="social-btn" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube Channel</span>
+            </a>
+            <a href="https://www.instagram.com/mewtronix861/" class="social-btn" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </header>
 
-    <div class="card">
-        <img src="Screenshot2.png" alt="QUNO">
-        <h2>QUNO – Quantum Nano Oracle</h2>
-        <p>Predictive quantum nano system for futuristic analysis.</p>
-    </div>
+    <section class="projects-section">
+        <h2 class="section-title">Innovation Portfolio</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="Screenshot1.png" alt="StormCipher Interface" class="card-image">
+                <div class="card-content">
+                    <h2>StormCipher</h2>
+                    <p>Advanced secure EXE conversion system with quantum-resistant encryption for ultra-fast encrypted operations and data protection.</p>
+                </div>
+            </div>
 
-    <div class="card">
-        <img src="Screenshot3.png" alt="Chemistry Wizard">
-        <h2>Chemistry Wizard</h2>
-        <p>Smart chemical assistant app for reactions, molecules, and visualization.</p>
-<a href="https://megaron.gumroad.com/l/histf?_gl=1*1oc3lvc*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2" 
-   class="btn btn-danger custom-red-btn" 
-   target="_blank">
-  Buy
-</a>
-    </div>
+            <div class="project-card">
+                <img src="Screenshot2.png" alt="QUNO Quantum Interface" class="card-image">
+                <div class="card-content">
+                    <h2>QUNO – Quantum Nano Oracle</h2>
+                    <p>Predictive quantum nano-analysis system providing futuristic insights with unprecedented computational accuracy.</p>
+                </div>
+            </div>
 
-    <div class="card">
-        <img src="Screenshot4.png" alt="EXO AI">
-        <h2>EXO AI</h2>
-        <p>Exoplanet analysis app with deep-space visuals and data insight.</p>
-                <p>Smart chemical assistant app for reactions, molecules, and visualization.</p>
-<a href="https://megaron.gumroad.com/l/dzlruq?_gl=1*1g6cgle*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdD" 
-   class="btn btn-danger custom-red-btn" 
-   target="_blank">
-  Buy
-</a>
-    </div>
+            <div class="project-card">
+                <img src="Screenshot3.png" alt="Chemistry Wizard Interface" class="card-image">
+                <div class="card-content">
+                    <h2>Chemistry Wizard</h2>
+                    <p>Intelligent chemical analysis platform for complex reactions, molecular visualization, and experimental simulation.</p>
+                    <a href="https://megaron.gumroad.com/l/histf?_gl=1*1oc3lvc*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2" 
+                       class="purchase-btn" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase 
+                    </a>
+                </div>
+            </div>
 
-    <div class="card">
-        <img src="Screenshot5.png" alt="Robotic Organisms">
-        <h2>Robotic Organism 3D Models</h2>
-        <p>Bundle of 96 robotic organism 3D models generated from images.</p>
-        <a href="https://megaron.gumroad.com/l/fheyo?_gl=1*334iet*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdDE3NjU" 
-   class="btn btn-danger custom-red-btn" 
-   target="_blank">
-  Buy
-</a>
-    </div>
-</section>
+            <div class="project-card">
+                <img src="Screenshot4.png" alt="EXO AI Interface" class="card-image">
+                <div class="card-content">
+                    <h2>EXO AI</h2>
+                    <p>Comprehensive exoplanet analysis suite with deep-space visualization and AI-powered astronomical data interpretation.</p>
+                    <a href="https://megaron.gumroad.com/l/dzlruq?_gl=1*1g6cgle*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdD" 
+                       class="purchase-btn" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase 
+                    </a>
+                </div>
+            </div>
 
-<footer>
-    © 2025 Mewtronix Technologies – Designed by Ahammed Yaseen A.
-</footer>
+            <div class="project-card">
+                <img src="Screenshot5.png" alt="Robotic Organisms 3D Models" class="card-image">
+                <div class="card-content">
+                    <h2>Robotic Organism 3D Models</h2>
+                    <p>Premium collection of 96 biologically-inspired robotic organism models for next-generation simulation and design.</p>
+                    <a href="https://megaron.gumroad.com/l/fheyo?_gl=1*334iet*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdDE3NjU" 
+                       class="purchase-btn" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2025 Mewtronix Technologies. All Rights Reserved.</p>
+            <p class="designer-credit">Designed by Ahammed Yaseen A. | Alien-Core Innovation Division</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+// Add subtle interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove loading screen (if used)
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000);
+    }
+    
+    // Add hover effect to project cards
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '2';
+        });
+    });
+    
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero-section');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+            hero.style.opacity = 1 - (scrolled * 0.002);
+        }
+    });
+    
+    // Background image fallback
+    const body = document.querySelector('body');
+    const bgImage = new Image();
+    bgImage.src = "futuristic-background.webp";
+    
+    bgImage.onload = function() {
+        console.log('Background image loaded successfully');
+        body.classList.add('bg-optimized');
+    };
+    
+    bgImage.onerror = function() {
+        console.log('Background image failed to load, using fallback');
+        body.classList.add('bg-fallback');
+        body.style.backgroundImage = 'none';
+    };
+});
+</script>
 </body>
 </html>
