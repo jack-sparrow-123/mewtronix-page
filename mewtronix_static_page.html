@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mewtronix Technologies – Alien-Core Futuristic Showcase</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Body + Background */
+body {
+    margin:0;
+    padding:0;
+    font-family:'Montserrat',sans-serif;
+    color:#e6f7ff;
+    background: url("futuristic-background.webp") center/cover no-repeat fixed;
+    overflow-x:hidden;
+}
+
+/* Energy overlay (subtle red/cyan particles) */
+.energy-overlay {
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at 10% 20%, rgba(0,255,255,0.05) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(255,0,30,0.05) 0%, transparent 50%);
+    pointer-events:none;
+    z-index:1;
+}
+
+/* Header */
+header {
+    text-align:center;
+    padding:60px 20px;
+    position:relative;
+    z-index:2;
+}
+header img {
+    width:140px;
+    border-radius:16px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 40px rgba(255,0,30,0.6);
+}
+header h1 {
+    font-family:'Orbitron',sans-serif;
+    font-size:3.5rem;
+    color:#00ffff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #ff0030;
+}
+header p {
+    color:#ff4d6d;
+    font-size:1.2rem;
+    text-shadow: 0 0 6px #ff0030;
+}
+
+/* Social Buttons */
+.social {
+    margin-top:20px;
+}
+.social a {
+    margin:0 15px;
+    padding:12px 25px;
+    background: linear-gradient(90deg,#00ffff,#ff0030);
+    color:#010114;
+    font-weight:700;
+    border-radius:50px;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 0 10px #00ffff, 0 0 20px #ff0030;
+}
+.social a:hover {
+    transform: scale(1.1);
+    box-shadow:0 0 20px #00ffff, 0 0 40px #ff0030;
+}
+
+/* Projects Grid */
+.projects {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:30px;
+    padding:50px;
+    position:relative;
+    z-index:2;
+}
+
+/* Project Cards */
+.card {
+    background: rgba(0,0,0,0.2);
+    border-radius:20px;
+    border:1px solid rgba(255,0,30,0.4);
+    padding:20px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 20px rgba(255,0,30,0.3),0 0 40px rgba(0,255,255,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 0 40px #ff0030, 0 0 60px #00ffff;
+}
+.card img {
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+    border:1px solid rgba(255,0,30,0.2);
+}
+.card h2 {
+    font-family:'Orbitron',sans-serif;
+    color:#00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff0030;
+    margin-bottom:8px;
+}
+.card p {
+    color:#ff4d6d;
+    line-height:1.5;
+    text-shadow:0 0 4px #ff0030;
+}
+
+/* Footer */
+footer {
+    text-align:center;
+    padding:40px;
+    color:#ff4d6d;
+    background: rgba(0,0,0,0.3);
+    border-top:1px solid rgba(255,0,30,0.4);
+    text-shadow:0 0 6px #ff0030;
+    position:relative;
+    z-index:2;
+}
+
+/* Small Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+.card img {
+    animation: float 4s ease-in-out infinite;
+}
+</style>
+</head>
+
+<body>
+<div class="energy-overlay"></div>
+
+<header>
+    <img src="C:\Users\user\Downloads\mewtronix-tech.png" alt="Mewtronix Logo">
+    <h1>Mewtronix Technologies</h1>
+    <p>Alien-Core Futuristic Innovations – AI • Quantum • Robotics • Chemistry • Astronomy</p>
+    <div class="social">
+        <a href="https://www.youtube.com/@mewtronix890">YouTube</a>
+        <a href="https://www.instagram.com/mewtronix861/">Instagram</a>
+    </div>
+</header>
+
+<section class="projects">
+    <div class="card">
+        <img src="C:\Users\user\OneDrive\Pictures\Screenshots 1\Screenshot1.png" alt="StormCipher">
+        <h2>StormCipher</h2>
+        <p>Secure and ultra-fast EXE conversion bot for encrypted operations.</p>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\user\OneDrive\Pictures\Screenshots 1\Screenshot2.png" alt="QUNO">
+        <h2>QUNO – Quantum Nano Oracle</h2>
+        <p>Predictive quantum nano system for futuristic analysis.</p>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\user\OneDrive\Pictures\Screenshots 1\Screenshot3.png" alt="Chemistry Wizard">
+        <h2>Chemistry Wizard</h2>
+        <p>Smart chemical assistant app for reactions, molecules, and visualization.</p>
+<a href="https://megaron.gumroad.com/l/histf?_gl=1*1oc3lvc*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2" 
+   class="btn btn-danger custom-red-btn" 
+   target="_blank">
+  Buy
+</a>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\user\OneDrive\Pictures\Screenshots 1\Screenshot4.png" alt="EXO AI">
+        <h2>EXO AI</h2>
+        <p>Exoplanet analysis app with deep-space visuals and data insight.</p>
+                <p>Smart chemical assistant app for reactions, molecules, and visualization.</p>
+<a href="https://megaron.gumroad.com/l/dzlruq?_gl=1*1g6cgle*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdD" 
+   class="btn btn-danger custom-red-btn" 
+   target="_blank">
+  Buy
+</a>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\user\OneDrive\Pictures\Screenshots 1\Screenshot5.png" alt="Robotic Organisms">
+        <h2>Robotic Organism 3D Models</h2>
+        <p>Bundle of 96 robotic organism 3D models generated from images.</p>
+        <a href="https://megaron.gumroad.com/l/fheyo?_gl=1*334iet*_ga*MTQxNDU3MTAyOS4xNzY0OTkzMjI2*_ga_6LJN6D94N6*czE3NjUwMDA2NjIkbzEkZzEkdDE3NjU" 
+   class="btn btn-danger custom-red-btn" 
+   target="_blank">
+  Buy
+</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Mewtronix Technologies – Designed by Ahammed Yaseen A.
+</footer>
+
+</body>
+</html>
